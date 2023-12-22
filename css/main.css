@@ -1,7 +1,6 @@
 * {
     padding: 0;
     margin: 0;
-    box-sizing: border-box;
     font-family: sans-serif;
 }
 
@@ -9,14 +8,19 @@ body {
     background-image: url('https://picsum.photos/1920/1080');
     background-repeat: no-repeat;
     background-size: cover;
-}
-
-.weather-info {
     display: flex;
     align-items: center;
     justify-content: center;
     height: 100vh;
     width: 100vw;
+}
+
+.weather-info {
+    border-radius: 16px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 1) 0%, rgba(245, 245, 245, .9) 100%);
+    box-shadow: 0px 0px 10px 3px rgba(36, 36, 36, .05);
+    transition-duration: .2s;
+    transition-property: opacity;
 }
 
 .weather-info__search-view {
@@ -27,8 +31,6 @@ body {
     width: 960px;
     height: 320px;
     padding: 50px;
-    border-radius: 16px;
-    background-color: rgba(255,255,255,.9);
 }
 
 .weather-info__search__input, .weather-info__search__button {
@@ -39,6 +41,10 @@ body {
     width: 280px;
     padding: 12px;
     border: 2px solid black;
+}
+
+.weather-info__search__input:focus {
+    outline: none;
 }
 
 .weather-info__search__button, .weather-info__btn-return {
@@ -64,6 +70,27 @@ body {
     width: 960px;
     height: 320px;
     padding: 50px;
-    border-radius: 16px;
-    background-color: rgba(255,255,255,.9);
+}
+
+.weather-info__city {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    font-size: 32px;
+}
+
+.weather-info__temperatures h2 {
+    margin-bottom: 30px;
+}
+
+.weather-info__temperatures p:first-of-type {
+    margin-bottom: 10px;
+}
+
+.weather-info__weather__icon {
+    background: linear-gradient(135deg, rgb(255, 0, 0) 0%, rgba(255, 179, 14, 0.9) 100%);
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
 }
