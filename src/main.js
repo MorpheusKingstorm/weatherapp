@@ -39,7 +39,7 @@ const onEnterSubmit = event => {
     if(event.key === "Enter") {
         let query = viewElems.searchInput.value;
         getWeatherByCity(query).then(data => {
-            displayWeatherData(data)
+            displayWeatherData(data);
         });
     }
 };
@@ -47,7 +47,7 @@ const onEnterSubmit = event => {
 const onClickSubmit = () => {
     let query = viewElems.searchInput.value;
     getWeatherByCity(query).then(data => {
-        displayWeatherData(data)
+        displayWeatherData(data);
     });
 };
 
@@ -72,10 +72,10 @@ const displayWeatherData = data => {
 
 const fadeInOut = () => {
     if(viewElems.mainContainer.style.opacity === "1" || viewElems.mainContainer.style.opacity === "") {
-        viewElems.mainContainer.style.opacity = "0"
+        viewElems.mainContainer.style.opacity = "0";
     }
     else {
-        viewElems.mainContainer.style.opacity = "1"
+        viewElems.mainContainer.style.opacity = "1";
     }
 }
 
