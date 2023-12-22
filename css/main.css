@@ -1,7 +1,6 @@
 * {
     padding: 0;
     margin: 0;
-    box-sizing: border-box;
     font-family: sans-serif;
 }
 
@@ -71,4 +70,27 @@ body {
     width: 960px;
     height: 320px;
     padding: 50px;
+}
+
+.weather-info__city {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    font-size: 32px;
+}
+
+.weather-info__temperatures h2 {
+    margin-bottom: 30px;
+}
+
+.weather-info__temperatures p:first-of-type {
+    margin-bottom: 10px;
+}
+
+.weather-info__weather__icon {
+    background: linear-gradient(135deg, rgb(255, 0, 0) 0%, rgba(255, 179, 14, 0.9) 100%);
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
 }

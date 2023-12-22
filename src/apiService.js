@@ -1,6 +1,6 @@
 export const getWeatherByCity = city => {
     const apiKey = "";
-    const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}`;
+    const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`;
 
     return fetch(apiUrl)
     .then(response => {

@@ -39,8 +39,7 @@ const onEnterSubmit = event => {
     if(event.key === "Enter") {
         let query = viewElems.searchInput.value;
         getWeatherByCity(query).then(data => {
-            console.log(data)
-            switchViewAnimation();
+            displayWeatherData(data)
         });
     }
 };
@@ -48,10 +47,28 @@ const onEnterSubmit = event => {
 const onClickSubmit = () => {
     let query = viewElems.searchInput.value;
     getWeatherByCity(query).then(data => {
-        console.log(data)
-        switchViewAnimation();
+        displayWeatherData(data)
     });
 };
+
+const displayWeatherData = data => {
+    switchViewAnimation();
+
+    const weather = data["main"];
+    console.log(data);
+
+    viewElems.weatherCity.innerText = data["name"];
+    viewElems.weatherIcon.src = `https://openweathermap.org/img/wn/${data["weather"][0]["icon"]}@2x.png`;
+    viewElems.weatherIcon.alt = data["weather"][0]["description"];
+
+    const currentTemp = weather["temp"];
+    const maxTemp = weather["temp_max"];
+    const minTemp = weather["temp_min"];
+
+    viewElems.weatherCurrentTemp.innerText = `Current temperature: ${currentTemp} ºC`;
+    viewElems.weatherMaxTemp.innerText = `Max temperature: ${maxTemp} ºC`;
+    viewElems.weatherMinTemp.innerText = `Min temperature: ${minTemp} ºC`;
+}
 
 const fadeInOut = () => {
     if(viewElems.mainContainer.style.opacity === "1" || viewElems.mainContainer.style.opacity === "") {
