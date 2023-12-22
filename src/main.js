@@ -27,7 +27,14 @@ class WeatherApp {
         if (event.type === 'click' || event.key === 'Enter') {
             let query = this.viewElems.searchInput.value;
             getWeatherByCity(query).then(data => {
+                this.viewElems.searchInput.style.borderColor = "black";
                 this.displayWeatherData(data);
+                this.switchViewAnimation();
+                this.viewElems.searchInput.value = "";
+                this.viewElems.searchInputError.innerText = "";
+            }).catch(() => {
+                this.viewElems.searchInputError.innerText = "Typed city does not exist in our database."
+                this.viewElems.searchInput.style.borderColor = "red";
             });
         }
     }
@@ -61,8 +68,6 @@ class WeatherApp {
     }
 
     displayWeatherData = data => {
-        this.switchViewAnimation();
-    
         const weather = data["main"];
     
         this.viewElems.weatherCity.innerText = data["name"];

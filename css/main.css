@@ -94,3 +94,9 @@ body {
     width: 100px;
     height: 100px;
 }
+
+.weather-info__error-message {
+    color: red;
+    font-size: 13px;
+    margin-top: 10px;
+}
